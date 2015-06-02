@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SandwichViewController.h
 //  SandwichFlow
 //
 //  Created by Daniel Kwiatkowski on 2015-06-01.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface SandwichViewController : UIViewController
 
+@property (strong,nonatomic) NSDictionary* sandwich;
 
 @end
-

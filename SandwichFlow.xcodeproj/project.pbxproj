@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		65442AC51B1CF1C4006E0D37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65442AC41B1CF1C4006E0D37 /* main.m */; };
 		65442AC81B1CF1C4006E0D37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65442AC71B1CF1C4006E0D37 /* AppDelegate.m */; };
-		65442ACB1B1CF1C4006E0D37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65442ACA1B1CF1C4006E0D37 /* ViewController.m */; };
 		65442ACE1B1CF1C4006E0D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65442ACC1B1CF1C4006E0D37 /* Main.storyboard */; };
 		65442AD01B1CF1C4006E0D37 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65442ACF1B1CF1C4006E0D37 /* Images.xcassets */; };
 		65442AD31B1CF1C4006E0D37 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65442AD11B1CF1C4006E0D37 /* LaunchScreen.xib */; };
 		65442ADF1B1CF1C4006E0D37 /* SandwichFlowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65442ADE1B1CF1C4006E0D37 /* SandwichFlowTests.m */; };
+		65442AEA1B1CF24A006E0D37 /* DynamicSandwichViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65442AE91B1CF24A006E0D37 /* DynamicSandwichViewController.m */; };
+		65442AED1B1D049B006E0D37 /* SandwichViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65442AEC1B1D049B006E0D37 /* SandwichViewController.m */; };
+		65442AF01B1D2638006E0D37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65442AEF1B1D2638006E0D37 /* UIKit.framework */; };
+		65442AF21B1D2643006E0D37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65442AF11B1D2643006E0D37 /* Foundation.framework */; };
+		65442AF41B1D264F006E0D37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65442AF31B1D264F006E0D37 /* CoreGraphics.framework */; };
+		65442AF71B1D2930006E0D37 /* CollectionViewLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65442AF61B1D2930006E0D37 /* CollectionViewLabelCell.m */; };
+		65442AFA1B1D34C9006E0D37 /* SandwichesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65442AF91B1D34C9006E0D37 /* SandwichesViewController.m */; };
+		65442AFD1B1D3562006E0D37 /* Sandwiches.json in Resources */ = {isa = PBXBuildFile; fileRef = 65442AFC1B1D3562006E0D37 /* Sandwiches.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +39,24 @@
 		65442AC41B1CF1C4006E0D37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65442AC61B1CF1C4006E0D37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		65442AC71B1CF1C4006E0D37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		65442AC91B1CF1C4006E0D37 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		65442ACA1B1CF1C4006E0D37 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		65442ACD1B1CF1C4006E0D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65442ACF1B1CF1C4006E0D37 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		65442AD21B1CF1C4006E0D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		65442AD81B1CF1C4006E0D37 /* SandwichFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SandwichFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65442ADD1B1CF1C4006E0D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65442ADE1B1CF1C4006E0D37 /* SandwichFlowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SandwichFlowTests.m; sourceTree = "<group>"; };
+		65442AE81B1CF24A006E0D37 /* DynamicSandwichViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicSandwichViewController.h; path = ../DynamicSandwichViewController.h; sourceTree = "<group>"; };
+		65442AE91B1CF24A006E0D37 /* DynamicSandwichViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DynamicSandwichViewController.m; path = ../DynamicSandwichViewController.m; sourceTree = "<group>"; };
+		65442AEB1B1D049B006E0D37 /* SandwichViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SandwichViewController.h; path = ../SandwichViewController.h; sourceTree = "<group>"; };
+		65442AEC1B1D049B006E0D37 /* SandwichViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SandwichViewController.m; path = ../SandwichViewController.m; sourceTree = "<group>"; };
+		65442AEF1B1D2638006E0D37 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		65442AF11B1D2643006E0D37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		65442AF31B1D264F006E0D37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		65442AF51B1D2930006E0D37 /* CollectionViewLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewLabelCell.h; path = ../CollectionViewLabelCell.h; sourceTree = "<group>"; };
+		65442AF61B1D2930006E0D37 /* CollectionViewLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewLabelCell.m; path = ../CollectionViewLabelCell.m; sourceTree = "<group>"; };
+		65442AF81B1D34C9006E0D37 /* SandwichesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SandwichesViewController.h; path = ../SandwichesViewController.h; sourceTree = "<group>"; };
+		65442AF91B1D34C9006E0D37 /* SandwichesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SandwichesViewController.m; path = ../SandwichesViewController.m; sourceTree = "<group>"; };
+		65442AFC1B1D3562006E0D37 /* Sandwiches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Sandwiches.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65442AF41B1D264F006E0D37 /* CoreGraphics.framework in Frameworks */,
+				65442AF21B1D2643006E0D37 /* Foundation.framework in Frameworks */,
+				65442AF01B1D2638006E0D37 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +83,9 @@
 		65442AB61B1CF1C4006E0D37 = {
 			isa = PBXGroup;
 			children = (
+				65442AFB1B1D352B006E0D37 /* Assets */,
 				65442AC11B1CF1C4006E0D37 /* SandwichFlow */,
+				65442AEE1B1D261A006E0D37 /* Frameworks */,
 				65442ADB1B1CF1C4006E0D37 /* SandwichFlowTests */,
 				65442AC01B1CF1C4006E0D37 /* Products */,
 			);
@@ -81,10 +103,16 @@
 		65442AC11B1CF1C4006E0D37 /* SandwichFlow */ = {
 			isa = PBXGroup;
 			children = (
+				65442AF81B1D34C9006E0D37 /* SandwichesViewController.h */,
+				65442AF91B1D34C9006E0D37 /* SandwichesViewController.m */,
+				65442AF51B1D2930006E0D37 /* CollectionViewLabelCell.h */,
+				65442AF61B1D2930006E0D37 /* CollectionViewLabelCell.m */,
+				65442AEB1B1D049B006E0D37 /* SandwichViewController.h */,
+				65442AEC1B1D049B006E0D37 /* SandwichViewController.m */,
+				65442AE81B1CF24A006E0D37 /* DynamicSandwichViewController.h */,
+				65442AE91B1CF24A006E0D37 /* DynamicSandwichViewController.m */,
 				65442AC61B1CF1C4006E0D37 /* AppDelegate.h */,
 				65442AC71B1CF1C4006E0D37 /* AppDelegate.m */,
-				65442AC91B1CF1C4006E0D37 /* ViewController.h */,
-				65442ACA1B1CF1C4006E0D37 /* ViewController.m */,
 				65442ACC1B1CF1C4006E0D37 /* Main.storyboard */,
 				65442ACF1B1CF1C4006E0D37 /* Images.xcassets */,
 				65442AD11B1CF1C4006E0D37 /* LaunchScreen.xib */,
@@ -117,6 +145,24 @@
 				65442ADD1B1CF1C4006E0D37 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65442AEE1B1D261A006E0D37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65442AF31B1D264F006E0D37 /* CoreGraphics.framework */,
+				65442AF11B1D2643006E0D37 /* Foundation.framework */,
+				65442AEF1B1D2638006E0D37 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65442AFB1B1D352B006E0D37 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				65442AFC1B1D3562006E0D37 /* Sandwiches.json */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65442AFD1B1D3562006E0D37 /* Sandwiches.json in Resources */,
 				65442ACE1B1CF1C4006E0D37 /* Main.storyboard in Resources */,
 				65442AD31B1CF1C4006E0D37 /* LaunchScreen.xib in Resources */,
 				65442AD01B1CF1C4006E0D37 /* Images.xcassets in Resources */,
@@ -219,9 +266,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65442ACB1B1CF1C4006E0D37 /* ViewController.m in Sources */,
 				65442AC81B1CF1C4006E0D37 /* AppDelegate.m in Sources */,
+				65442AFA1B1D34C9006E0D37 /* SandwichesViewController.m in Sources */,
+				65442AEA1B1CF24A006E0D37 /* DynamicSandwichViewController.m in Sources */,
+				65442AF71B1D2930006E0D37 /* CollectionViewLabelCell.m in Sources */,
 				65442AC51B1CF1C4006E0D37 /* main.m in Sources */,
+				65442AED1B1D049B006E0D37 /* SandwichViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
