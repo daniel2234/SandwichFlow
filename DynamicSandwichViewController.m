@@ -17,6 +17,10 @@
 @implementation DynamicSandwichViewController{
     //use this variable to keep track of views, this is easier than having to iterate over all the subviews in order to find those that you are interested in.
     NSMutableArray* _views;
+    UIGravityBehavior* _gravity;
+    UIDynamicAnimator* _animator;
+    CGPoint _previousTouchPoint;
+    BOOL _draggingView;
 }
 
 - (void)viewDidLoad {
@@ -39,7 +43,6 @@
         [_views addObject:[self addRecipeAtOffset:offset forSandwich:sandwich]];
         offset -= 50.0f;
     }
-    
 }
 
 -(NSArray*)sandwiches{
@@ -68,20 +71,38 @@
     [self addChildViewController:viewController];
     [self.view addSubview:viewController.view];
     [viewController didMoveToParentViewController:self];
-
+    
+    _animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
+    _gravity = [[UIGravityBehavior alloc]init];
+    [_animator addBehavior:_gravity];
+    _gravity.magnitude = 4.0f;
+    
+    //add a gesture recognizer with a view
+    UIPanGestureRecognizer* pan = [[UIPanGestureRecognizer alloc]initWithTarget:self
+                                                                         action:@selector(handlePan:)];
+    [viewController.view addGestureRecognizer:pan];
+    
+    //create a collision behaviour so it does not go into freefall
+    UICollisionBehavior* collision = [[UICollisionBehavior alloc]initWithItems:@[view]];
+    [_animator addBehavior:collision];
+    
+    //lower boundary, where the tab rests, in which it create a boundary where this specific view controller will come to rest. It is based on the bottom edge of the current view location.
+    CGFloat boundary = view.frame.origin.y + view.frame.size.height+1;
+    CGPoint boundaryStart = CGPointMake(0.0, boundary);
+    CGPoint boundaryEnd = CGPointMake(self.view.bounds.size.width, boundary);
+    
+    [collision addBoundaryWithIdentifier:@1 fromPoint:boundaryStart toPoint:boundaryEnd];
+    
+    //apply gravity to the view
+    [_gravity addItem:view];
+    
+    //The net result of this code is that if the view associated with this view controller is moved from its current location, it will fall under the influence of gravity, eventually coming to rest at its original location.
     return view;
+}
+
+
+-(void)handlePan:(UIPanGestureRecognizer*)gesture{
     
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
