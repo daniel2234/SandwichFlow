@@ -24,7 +24,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [self loadSandwiches];
     return YES;
 }
 
@@ -35,10 +35,11 @@
     NSString* data = [NSString stringWithContentsOfFile: path
                                                encoding: NSUTF8StringEncoding
                                                   error: nil];
+    
     NSData* resultData = [data dataUsingEncoding:NSUTF8StringEncoding];
     
     _sandwiches = [NSJSONSerialization JSONObjectWithData:resultData options:kNilOptions error:nil];
     
-    
+    NSLog(@"%@",_sandwiches);
 }
 @end

@@ -29,23 +29,18 @@
     //Header Logo
     UIImageView *header = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Sarnie"]];
     header.center = CGPointMake(220, 190);
+    
     [self.view addSubview:header];
     
     _views = [NSMutableArray new];
     CGFloat offset = 250.0f;
+    
     for (NSDictionary* sandwich in [self sandwiches]) {
         [_views addObject:[self addRecipeAtOffset:offset forSandwich:sandwich]];
-        
         offset -= 50.0f;
     }
     
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 -(NSArray*)sandwiches{
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
@@ -53,7 +48,7 @@
 }
 
 
-//Create a SandwichViewController instance. Notice that this uses the SandwichVC identifier you set earlier.
+//Create a SandwichViewController instance. Notice that this uses the SandwichVC identifier
 //Set the frame of this recipe and the supply the sandwich data.
 //Add the view controller as a child and to the view.
 -(UIView*)addRecipeAtOffset:(CGFloat)offset forSandwich:(NSDictionary*)sandwich{
