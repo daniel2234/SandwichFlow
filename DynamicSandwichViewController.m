@@ -99,6 +99,12 @@
     
     [collision addBoundaryWithIdentifier:@1 fromPoint:boundaryStart toPoint:boundaryEnd];
     
+    
+    //upper boundary
+    boundaryStart = CGPointMake(0.0, 0.0);
+    boundaryEnd = CGPointMake(self.view.bounds.size.width, 0.0);
+    [collision addBoundaryWithIdentifier:@2 fromPoint:boundaryStart toPoint:boundaryEnd];
+    
     //apply gravity to the view
     [_gravity addItem:view];
     
@@ -175,6 +181,7 @@
         }
     }
 }
+
 //This is used to show and hide the non-docked views so that the docked recipe occupies the entire screen without being obscured by the recipes below.
 -(void)setAlphaWhenViewDocked:(UIView*)view alpha:(CGFloat)alpha{
     for (UIView* aView in _views) {
@@ -184,5 +191,15 @@
     }
 }
 
+//This checks whether a boundary with the identifier “2” is involved in the collision and if so, docks the recipe item
+-(void)collisionBehavior:(UICollisionBehavior *)behavior
+     beganContactForItem:(id<UIDynamicItem>)item
+  withBoundaryIdentifier:(id<NSCopying>)identifier
+                 atPoint:(CGPoint)p{
+    if ([@2 isEqual:identifier]) {
+        UIView* view = (UIView*) item;
+        [self tryDockView:view];
+    }
+}
 
 @end
