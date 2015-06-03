@@ -10,7 +10,7 @@
 #import "SandwichViewController.h"
 #import "AppDelegate.h"
 
-@interface DynamicSandwichViewController ()
+@interface DynamicSandwichViewController () <UICollisionBehaviorDelegate>
 
 @end
 
@@ -28,23 +28,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Background image
-    UIImageView* backgroundImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Background-LowerLayer"]];
+// add the lower background layer
+    UIImageView* backgroundImageView = [[UIImageView alloc]initWithImage:@""];
+    backgroundImageView.frame = CGRectInset(self.view.frame, -50.0f, -50.f);
     [self.view addSubview:backgroundImageView];
     
-    //Header Logo
-    UIImageView *header = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Sarnie"]];
-    header.center = CGPointMake(220, 190);
-    
-    [self.view addSubview:header];
-    
-    _views = [NSMutableArray new];
-    CGFloat offset = 250.0f;
-    
-    for (NSDictionary* sandwich in [self sandwiches]) {
-        [_views addObject:[self addRecipeAtOffset:offset forSandwich:sandwich]];
-        offset -= 50.0f;
-    }
 }
 
 -(NSArray*)sandwiches{
@@ -89,11 +77,12 @@
     [_animator addBehavior:collision];
     
     //lower boundary, where the tab rests, in which it create a boundary where this specific view controller will come to rest. It is based on the bottom edge of the current view location.
-    CGFloat boundary = view.frame.origin.y + view.frame.size.height + 1;
-    CGPoint boundaryStart = CGPointMake(0.0, boundary);
-    CGPoint boundaryEnd = CGPointMake(self.view.bounds.size.width, boundary);
+//  CGFloat boundary = view.frame.origin.y + view.frame.size.height + 1;
+    CGPoint boundaryStart = CGPointMake(0.0, 0.0);
+    CGPoint boundaryEnd = CGPointMake(self.view.bounds.size.width, 0.0);
     
-    [collision addBoundaryWithIdentifier:@1 fromPoint:boundaryStart toPoint:boundaryEnd];
+    [collision addBoundaryWithIdentifier:@3 fromPoint:boundaryStart toPoint:boundaryEnd];
+    collision.collisionDelegate = self;
     
     //apply gravity to the view
     [_gravity addItem:view];
@@ -148,6 +137,12 @@
     [behaviour addLinearVelocity:vel forItem:view];
     //this takes the gesture velocity, removes x component, locates the item behaviour, and the adds velocity to the behaviour  , the gesture velocity is expressed in points per second , same units used in by the same dynamics
 }
+-(void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p{
+    if ([@2 isEqual:identifier]) {
+        UIView* view = (UIView*)item;
+        [self tryDockView:view];
+    }
+}
 //This method checks whether the view has been dragged close to the top of the screen. If it has, and the view is not yet docked, it creates a UISnapBehaviour which snaps the view to the center of the screen.If the view has been dragged away from the top of the screen and was previously docked, the code removes the snap behavior.
 -(void)tryDockView:(UIView*)view{
     BOOL viewHasReachedDockLocation = view.frame.origin.y < 100.0;
@@ -175,5 +170,6 @@
         }
     }
 }
+
 
 @end
