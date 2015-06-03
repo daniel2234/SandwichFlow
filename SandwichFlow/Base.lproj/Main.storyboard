@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Dynamic Sandwich View Controller-->
@@ -64,13 +63,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pli-m9-4wz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pli-m9-4wz">
                                 <rect key="frame" x="147" y="89" width="297" height="236"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="297" id="PP7-KY-sfZ"/>
-                                </constraints>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZG2-NM-aUV">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZG2-NM-aUV">
                                 <rect key="frame" x="-5" y="0.0" width="605" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="iql-5T-7Mo">
@@ -82,7 +78,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IEZ-uk-x4M">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IEZ-uk-x4M">
                                 <rect key="frame" x="144" y="348" width="300" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="irs-nw-hxm"/>
@@ -105,7 +101,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmV-YE-1GL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nmV-YE-1GL">
                                 <rect key="frame" x="158" y="387" width="279" height="186"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -118,18 +114,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZG2-NM-aUV" firstAttribute="top" secondItem="FnR-Gz-NBT" secondAttribute="top" id="8ez-mE-EPY"/>
-                            <constraint firstItem="nmV-YE-1GL" firstAttribute="top" secondItem="IEZ-uk-x4M" secondAttribute="bottom" constant="8" symbolic="YES" id="Dac-R7-7rJ"/>
-                            <constraint firstItem="ZG2-NM-aUV" firstAttribute="leading" secondItem="FnR-Gz-NBT" secondAttribute="leadingMargin" constant="-21" id="IEe-bP-IKd"/>
-                            <constraint firstAttribute="centerX" secondItem="IEZ-uk-x4M" secondAttribute="centerX" constant="6" id="IWm-0G-aDZ"/>
-                            <constraint firstItem="yzX-qF-qxd" firstAttribute="top" secondItem="nmV-YE-1GL" secondAttribute="bottom" constant="27" id="LRJ-Ci-HIh"/>
-                            <constraint firstItem="IEZ-uk-x4M" firstAttribute="trailing" secondItem="pli-m9-4wz" secondAttribute="trailing" id="LgM-vf-ZVj"/>
-                            <constraint firstItem="pli-m9-4wz" firstAttribute="top" secondItem="ZG2-NM-aUV" secondAttribute="bottom" constant="45" id="P7R-er-f4v"/>
-                            <constraint firstItem="pli-m9-4wz" firstAttribute="leading" secondItem="FnR-Gz-NBT" secondAttribute="leading" constant="147" id="Re7-d8-N94"/>
-                            <constraint firstItem="yzX-qF-qxd" firstAttribute="top" secondItem="pli-m9-4wz" secondAttribute="bottom" constant="275" id="cgw-jo-M5b"/>
-                            <constraint firstAttribute="centerX" secondItem="ZG2-NM-aUV" secondAttribute="centerX" constant="2.5" id="gjX-pR-S3D"/>
-                            <constraint firstItem="IEZ-uk-x4M" firstAttribute="top" secondItem="pli-m9-4wz" secondAttribute="bottom" constant="23" id="kQJ-p0-IrQ"/>
-                            <constraint firstItem="nmV-YE-1GL" firstAttribute="centerX" secondItem="ZG2-NM-aUV" secondAttribute="centerX" id="lba-5d-RTB"/>
+                            <constraint firstAttribute="centerX" secondItem="ZG2-NM-aUV" secondAttribute="centerX" constant="2.5" id="2PL-eM-zi5"/>
+                            <constraint firstAttribute="centerX" secondItem="pli-m9-4wz" secondAttribute="centerX" constant="4.5" id="7mz-Ij-ut8"/>
+                            <constraint firstAttribute="centerX" secondItem="IEZ-uk-x4M" secondAttribute="centerX" constant="6" id="Vf5-gh-yny"/>
+                            <constraint firstAttribute="centerX" secondItem="nmV-YE-1GL" secondAttribute="centerX" constant="2.5" id="Vsv-sq-HiU"/>
                         </constraints>
                     </view>
                     <connections>

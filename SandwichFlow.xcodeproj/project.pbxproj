@@ -21,6 +21,11 @@
 		65442AF71B1D2930006E0D37 /* CollectionViewLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65442AF61B1D2930006E0D37 /* CollectionViewLabelCell.m */; };
 		65442AFA1B1D34C9006E0D37 /* SandwichesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65442AF91B1D34C9006E0D37 /* SandwichesViewController.m */; };
 		65442AFD1B1D3562006E0D37 /* Sandwiches.json in Resources */ = {isa = PBXBuildFile; fileRef = 65442AFC1B1D3562006E0D37 /* Sandwiches.json */; };
+		65DEAD4A1B1E61CA00708651 /* CheeseAndOnion.png in Resources */ = {isa = PBXBuildFile; fileRef = 65DEAD451B1E61CA00708651 /* CheeseAndOnion.png */; };
+		65DEAD4B1B1E61CA00708651 /* EggAndCress.png in Resources */ = {isa = PBXBuildFile; fileRef = 65DEAD461B1E61CA00708651 /* EggAndCress.png */; };
+		65DEAD4C1B1E61CA00708651 /* EggSalad.png in Resources */ = {isa = PBXBuildFile; fileRef = 65DEAD471B1E61CA00708651 /* EggSalad.png */; };
+		65DEAD4D1B1E61CA00708651 /* Salmon.png in Resources */ = {isa = PBXBuildFile; fileRef = 65DEAD481B1E61CA00708651 /* Salmon.png */; };
+		65DEAD4E1B1E61CA00708651 /* Trout.png in Resources */ = {isa = PBXBuildFile; fileRef = 65DEAD491B1E61CA00708651 /* Trout.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,11 @@
 		65442AF81B1D34C9006E0D37 /* SandwichesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SandwichesViewController.h; path = ../SandwichesViewController.h; sourceTree = "<group>"; };
 		65442AF91B1D34C9006E0D37 /* SandwichesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SandwichesViewController.m; path = ../SandwichesViewController.m; sourceTree = "<group>"; };
 		65442AFC1B1D3562006E0D37 /* Sandwiches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Sandwiches.json; sourceTree = "<group>"; };
+		65DEAD451B1E61CA00708651 /* CheeseAndOnion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheeseAndOnion.png; sourceTree = "<group>"; };
+		65DEAD461B1E61CA00708651 /* EggAndCress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EggAndCress.png; sourceTree = "<group>"; };
+		65DEAD471B1E61CA00708651 /* EggSalad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EggSalad.png; sourceTree = "<group>"; };
+		65DEAD481B1E61CA00708651 /* Salmon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Salmon.png; sourceTree = "<group>"; };
+		65DEAD491B1E61CA00708651 /* Trout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trout.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +171,11 @@
 			isa = PBXGroup;
 			children = (
 				65442AFC1B1D3562006E0D37 /* Sandwiches.json */,
+				65DEAD451B1E61CA00708651 /* CheeseAndOnion.png */,
+				65DEAD461B1E61CA00708651 /* EggAndCress.png */,
+				65DEAD471B1E61CA00708651 /* EggSalad.png */,
+				65DEAD481B1E61CA00708651 /* Salmon.png */,
+				65DEAD491B1E61CA00708651 /* Trout.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -247,8 +262,13 @@
 			files = (
 				65442AFD1B1D3562006E0D37 /* Sandwiches.json in Resources */,
 				65442ACE1B1CF1C4006E0D37 /* Main.storyboard in Resources */,
+				65DEAD4C1B1E61CA00708651 /* EggSalad.png in Resources */,
+				65DEAD4B1B1E61CA00708651 /* EggAndCress.png in Resources */,
+				65DEAD4A1B1E61CA00708651 /* CheeseAndOnion.png in Resources */,
 				65442AD31B1CF1C4006E0D37 /* LaunchScreen.xib in Resources */,
+				65DEAD4E1B1E61CA00708651 /* Trout.png in Resources */,
 				65442AD01B1CF1C4006E0D37 /* Images.xcassets in Resources */,
+				65DEAD4D1B1E61CA00708651 /* Salmon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +486,7 @@
 				65442AE41B1CF1C4006E0D37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65442AE51B1CF1C4006E0D37 /* Build configuration list for PBXNativeTarget "SandwichFlowTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +495,7 @@
 				65442AE71B1CF1C4006E0D37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

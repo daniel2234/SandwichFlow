@@ -9,7 +9,7 @@
 #import "SandwichViewController.h"
 #import "CollectionViewLabelCell.h"
 
-@interface SandwichViewController ()<UICollectionViewDelegate>
+@interface SandwichViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
