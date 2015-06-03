@@ -10,7 +10,7 @@
 #import "SandwichViewController.h"
 #import "AppDelegate.h"
 
-@interface DynamicSandwichViewController ()
+@interface DynamicSandwichViewController () <UICollisionBehaviorDelegate>
 
 @end
 
@@ -100,8 +100,8 @@
     //apply gravity to the view
     [_gravity addItem:view];
     
-    //The net result of this code is that if the view associated with this view controller is moved from its current location, it will fall under the influence of gravity, eventually coming to rest at its original location.
     
+    //adds dynamic behaviour for each of the recipe views
     UIDynamicBehavior* itemBehaviour = [[UIDynamicItemBehavior alloc]initWithItems:@[view]];
     [_animator addBehavior:itemBehaviour];
     
@@ -131,10 +131,27 @@
         
     } else if (gesture.state == UIGestureRecognizerStateEnded && _draggingView) {
         // 3. the gesture has ended
-
+        [self addVelocityToView:draggedView fromGesture:gesture];
         [_animator updateItemUsingCurrentState:draggedView];
         _draggingView = NO;
     }
+}
+// iterates over the behaviours until it finds the one with the correct type associated with the given view
+-(UIDynamicItemBehavior*) itemForBehaviourForView:(UIView*)view{
+    for (UIDynamicItemBehavior* behaviour in _animator.behaviors) {
+        if (behaviour.class == [UIDynamicItemBehavior class] && [behaviour.items firstObject] == view){
+            return behaviour;
+        }
+    }
+    return nil;
+}
+//This takes the gesture velocity, removes the X component (you don’t want those recipes flying off sideways!),
+//locates the item behavior, and then adds the velocity to the behavior.
+-(void)addVelocityToView:(UIView*)view fromGesture:(UIPanGestureRecognizer*)gesture{
+    CGPoint vel = [gesture velocityInView:self.view];
+    vel.x = 0;
+    UIDynamicItemBehavior* behaviour = [self itemForBehaviourForView:view];
+    [behaviour addLinearVelocity:vel forItem:view];
 }
 
 @end
