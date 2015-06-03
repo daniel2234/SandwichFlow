@@ -70,7 +70,7 @@
 }
 
 -(IBAction)closeButtonTapped:(id)sender{
-    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
