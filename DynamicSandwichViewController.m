@@ -21,7 +21,9 @@
     UIGravityBehavior* _gravity;
     UIDynamicAnimator* _animator;
     CGPoint _previousTouchPoint;
+    UISnapBehavior* _snap;
     BOOL _draggingView;
+    BOOL _viewDocked;
 }
 
 - (void)viewDidLoad {
@@ -132,6 +134,7 @@
     } else if (gesture.state == UIGestureRecognizerStateEnded && _draggingView) {
         // 3. the gesture has ended
         [self addVelocityToView:draggedView fromGesture:gesture];
+        [self tryDockView:draggedView];
         [_animator updateItemUsingCurrentState:draggedView];
         _draggingView = NO;
     }
@@ -153,5 +156,33 @@
     UIDynamicItemBehavior* behaviour = [self itemForBehaviourForView:view];
     [behaviour addLinearVelocity:vel forItem:view];
 }
+
+//This method checks whether the view has been dragged close to the top of the screen. If it has, and the view is not yet docked, it creates a UISnapBehaviour which snaps the view to the center of the screen
+-(void)tryDockView:(UIView*)view{
+    BOOL viewHasReachedDockLocation = view.frame.origin.y < 100;
+    if (viewHasReachedDockLocation) {
+        if (!_viewDocked) {
+            _snap = [[UISnapBehavior alloc]initWithItem:view snapToPoint:self.view.center];
+            [_animator addBehavior:_snap];
+            [self setAlphaWhenViewDocked:view alpha:0.0];
+            _viewDocked = YES;
+        }
+    } else{
+        if (_viewDocked) {
+            [_animator removeBehavior:_snap];
+            [self setAlphaWhenViewDocked:view alpha:1.0];
+            _viewDocked = NO;
+        }
+    }
+}
+//This is used to show and hide the non-docked views so that the docked recipe occupies the entire screen without being obscured by the recipes below.
+-(void)setAlphaWhenViewDocked:(UIView*)view alpha:(CGFloat)alpha{
+    for (UIView* aView in _views) {
+        if (aView != view) {
+            aView.alpha = alpha;
+        }
+    }
+}
+
 
 @end
