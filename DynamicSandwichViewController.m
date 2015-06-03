@@ -28,6 +28,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+////add a background layer
+//    UIImageView* backgroundImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Background-LowerLayer.png"]];
+//    backgroundImageView.frame = CGRectInset(self.view.frame, -50.0f, -50.0f);
+//    [self.view addSubview:backgroundImageView];
+//    [self addMotionToEffectToView:backgroundImageView magnitude:50.0f];
+//    
+////add the background mid layer
+//    UIImageView* midLayerImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Background-MidLayer.png"]];
+//    [self.view addSubview:midLayerImageView];
+//    
+////add the foreground image
+//    UIImageView* header = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Sarnie.png"]];
+//    header.center = CGPointMake(220, 190);
+//    [self.view addSubview:header];
+//    [self addMotionToEffectToView:header magnitude:-20.0f];
+    
     
     //Background image
     UIImageView* backgroundImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Background-LowerLayer"]];
@@ -47,6 +63,27 @@
         offset -= 50.0f;
     }
 }
+
+-(void)addMotionToEffectToView:(UIView*)view magnitude:(float)magnitude{
+    
+    UIInterpolatingMotionEffect* xMotion = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    xMotion.minimumRelativeValue = @(-magnitude);
+    xMotion.maximumRelativeValue = @(magnitude);
+    
+    UIInterpolatingMotionEffect* yMotion = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+    xMotion.minimumRelativeValue = @(-magnitude);
+    yMotion.minimumRelativeValue = @(magnitude);
+    
+    UIMotionEffectGroup* group = [[UIMotionEffectGroup alloc]init];
+    
+    group.motionEffects = @[xMotion,yMotion];
+    
+    [view addMotionEffect:group];
+}
+
+
+
+
 
 -(NSArray*)sandwiches{
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
